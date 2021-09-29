@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAVI</title>
+    <style>
+      /* Only for this testing page */
+      body {
+        margin: 3rem 2rem;
+      }
+    </style>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/vis.css" />
+  </head>
+  <body>
+    <div id="vis" class="vis">
+      <div class="vis-section vis-row">
+        <div class="vis-col vis-main vis-stack">
+          <div class="vis-title">
+            Change in Zero Dose Children <br />
+            2019 to 2020
+          </div>
+          <div class="vis-body">
+            <div id="vis-bubble-map" class="chart-container"></div>
+          </div>
+        </div>
+        <div class="vis-col vis-side vis-stack">
+          <div class="vis-filters">
+            <div class="vis-filter">
+              <label for="fragility-filter">Fragility</label>
+              <select id="fragility-filter"></select>
+            </div>
+            <div class="vis-filter">
+              <label for="segment-filter">Gavi Segment</label>
+              <select id="segment-filter"></select>
+            </div>
+            <div class="vis-filter">
+              <label for="income-level-filter">Income Level</label>
+              <select id="income-level-filter"></select>
+            </div>
+          </div>
+          <div class="vis-butterfly-wrapper">
+            <div id="vis-butterfly" class="chart-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="js/vis-const.js"></script>
+    <script src="js/vis-process-data.js"></script>
+    <script src="js/vis-tooltip.js"></script>
+    <script src="js/vis-select.js"></script>
+    <script src="js/vis-filters.js"></script>
+    <script src="js/vis-bubble-map.js"></script>
+    <script src="js/vis-butterfly.js"></script>
+    <script src="js/vis.js"></script>
+  </body>
+</html>
