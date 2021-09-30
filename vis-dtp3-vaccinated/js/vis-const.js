@@ -14,7 +14,7 @@ const VIS_CONST = {
   regionName: {
     EMRO: "Eastern Mediterranean Region",
     AFRO: "African Region",
-    WPRO: "West Pacific Region",
-    SEARO: "South East Asia Region",
+    WPRO: "Western Pacific Region",
+    SEARO: "South-East Asia Region",
   },
 };
