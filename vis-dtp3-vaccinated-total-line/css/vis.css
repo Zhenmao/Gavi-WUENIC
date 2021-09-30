@@ -1,0 +1,11 @@
+.vis .vis-line-chart-key {
+  margin-top: 1rem;
+}
+
+@media (min-width: 960px) {
+  .vis .vis-line-chart-key {
+    margin-top: auto;
+    margin-left: auto;
+    align-self: flex-end;
+  }
+}

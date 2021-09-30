@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAVI</title>
+    <link rel="stylesheet" href="../common/css/fonts.css" />
+    <link rel="stylesheet" href="../common/css/vis-common.css" />
+    <link rel="stylesheet" href="css/vis.css" />
+  </head>
+  <body>
+    <div id="vis" class="vis vis-stack--lg" onclick>
+      <div class="vis-section vis-stack">
+        <div class="vis-row">
+          <div class="vis-col vis-stack--xs vis-content">
+            <div class="vis-title">
+              Change in Routine Immunisation Coverage
+            </div>
+          </div>
+        </div>
+        <div class="vis-row">
+          <div class="vis-col vis-main vis-stack">
+            <div class="vis-body">
+              <div id="vis-line-chart" class="chart-container"></div>
+            </div>
+          </div>
+          <div class="vis-col vis-stack--xs vis-side vis-line-chart-key">
+            <div id="vis-line-chart-key-container" class="vis-card"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="../common/js/vis-tooltip.js"></script>
+    <script src="../common/js/vis-enter-observer.js"></script>
+    <script src="js/vis-const.js"></script>
+    <script src="js/vis-process-data.js"></script>
+    <script src="js/vis-line-key.js"></script>
+    <script src="js/vis-line.js"></script>
+    <script src="js/vis.js"></script>
+  </body>
+</html>
