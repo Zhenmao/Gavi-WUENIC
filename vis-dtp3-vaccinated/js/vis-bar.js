@@ -185,7 +185,7 @@ class VisBar {
       .call((g) =>
         g
           .selectAll(".axis-title")
-          .data(["Relative Difference (%)"])
+          .data(["Relative difference (%)"])
           .join((enter) =>
             enter
               .append("text")
