@@ -30,4 +30,5 @@ Promise.all([
     data,
     tooltip,
   });
+  butterflyChart.resize();
 });
