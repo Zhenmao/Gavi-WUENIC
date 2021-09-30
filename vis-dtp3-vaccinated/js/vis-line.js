@@ -11,7 +11,7 @@ class VisLine {
 
     this.margin = {
       top: 8,
-      right: 140,
+      right: 132,
       bottom: 88,
       left: 72,
     };
@@ -70,6 +70,12 @@ class VisLine {
           8;
         if (x < 0) {
           x = x + this.tooltip.tooltipBox.width + 16;
+          if (
+            x + this.tooltip.tooltipBox.width >
+            this.tooltip.containerBox.width
+          ) {
+            x = 0;
+          }
         }
         let y =
           event.clientY -
