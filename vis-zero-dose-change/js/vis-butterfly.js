@@ -186,16 +186,8 @@ class VisButterfly {
           <div>${d.region}</div>
         </div>
         <div>
-          <div>PEF Tire</div>
-          <div>${d.pefTire}</div>
-        </div>
-        <div>
           <div>Fragility</div>
           <div>${d.fragility}</div>
-        </div>
-        <div>
-          <div>Gavi Segment</div>
-          <div>${d.segment}</div>
         </div>
         <div>
           <div>Income Level</div>
