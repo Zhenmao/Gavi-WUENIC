@@ -4,7 +4,6 @@ class VisFilters {
     this.onFiltered = onFiltered;
     this.filterValues = {
       fragility: "ALL",
-      segment: "ALL",
       incomeLevel: "ALL",
     };
     this.init();
@@ -23,28 +22,6 @@ class VisFilters {
       initValue: this.filterValues.fragility,
       onChange: (value) => {
         this.filterValues.fragility = value;
-        this.filter();
-      },
-    });
-
-    // Gavi Segment
-    this.segmentOptions = [
-      { value: "ALL", filter: () => true },
-      { value: "Fragile", filter: (d) => d.segment === "Fragile" },
-      { value: "High impact", filter: (d) => d.segment === "High impact" },
-      {
-        value: "Post-transition",
-        filter: (d) => d.segment === "Post-transition",
-      },
-      { value: "Priority", filter: (d) => d.segment === "Priority" },
-      { value: "Standard", filter: (d) => d.segment === "Standard" },
-    ];
-    new VisSelect({
-      el: document.querySelector("#segment-filter"),
-      options: this.segmentOptions,
-      initValue: this.filterValues.segment,
-      onChange: (value) => {
-        this.filterValues.segment = value;
         this.filter();
       },
     });
@@ -70,9 +47,6 @@ class VisFilters {
     const filters = [
       // Fragility
       this.fragilityOptions.find((d) => d.value === this.filterValues.fragility)
-        .filter,
-      // Gavi Segment
-      this.segmentOptions.find((d) => d.value === this.filterValues.segment)
         .filter,
       // Income Level
       this.incomeLevelOptions.find(
