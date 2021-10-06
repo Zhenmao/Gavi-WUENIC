@@ -71,7 +71,7 @@ class VisButterfly {
   renderZeroTick() {
     this.zeroTick
       .attr("stroke", "currentColor")
-      .attr("stroke-opacity", 0.2)
+      .attr("stroke-opacity", 0.1)
       .attr("x1", this.x(0))
       .attr("x2", this.x(0))
       .attr("y2", this.height);

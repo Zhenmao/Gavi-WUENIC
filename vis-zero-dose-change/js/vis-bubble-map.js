@@ -1,8 +1,9 @@
 class VisBubbleMap {
-  constructor({ data, world, tooltip }) {
+  constructor({ data, world, tooltip, onRChange }) {
     this.data = data;
     this.world = world;
     this.tooltip = tooltip;
+    this.onRChange = onRChange;
     this.resize = this.resize.bind(this);
     this.ticked = this.ticked.bind(this);
     this.init();
@@ -99,6 +100,8 @@ class VisBubbleMap {
   wrangle() {
     if (!this.displayData) {
       this.r.domain([0, d3.max(this.data, (d) => Math.abs(d.zdChange))]).nice();
+
+      this.onRChange(this.r);
 
       this.featureMap = new Map(this.countries.features.map((d) => [d.id, d]));
     }

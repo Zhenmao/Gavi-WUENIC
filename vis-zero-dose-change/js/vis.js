@@ -15,15 +15,20 @@ Promise.all([
   const filters = new VisFilters({
     data,
     onFiltered: (filtered) => {
-      bubbleChart.updateData(filtered);
+      bubbleMap.updateData(filtered);
       butterflyChart.updateData(filtered);
     },
   });
 
-  const bubbleChart = new VisBubbleMap({
+  const bubbleMapKey = new VisBubbleMapKey();
+
+  const bubbleMap = new VisBubbleMap({
     data,
     world,
     tooltip,
+    onRChange: (r) => {
+      bubbleMapKey.updateR(r);
+    },
   });
 
   const butterflyChart = new VisButterfly({

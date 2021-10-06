@@ -58,6 +58,11 @@
 .vis .vis-col {
   padding-left: 1rem;
   padding-right: 1rem;
+  flex: 1 1 0;
+}
+
+.vis .vis-col + .vis-col {
+  padding-top: 2rem;
 }
 
 .vis.vis-stack--lg > * + * {
@@ -91,6 +96,10 @@
   .vis .vis-row {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .vis .vis-col + .vis-col {
+    padding-top: 0;
   }
 
   .vis .vis-main {
@@ -183,12 +192,56 @@
   opacity: 1;
 }
 
-/* Bubble Map */
+/* Key */
+.vis .vis-key {
+  margin-bottom: 0.25rem;
+}
+
+.vis .vis-keys .vis-card > * + * {
+  margin-top: 1rem;
+}
+
+.vis .legend-item {
+  display: flex;
+  align-items: baseline;
+}
+
+.vis .legend-item + .legend-item {
+  margin-top: 0.25rem;
+}
+
+.vis .legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  flex: 0 0 12px;
+  background-color: currentColor;
+}
+
+.vis .legend-swatch--dashed-ring {
+  background-color: #fff;
+  border: 1px dashed currentColor;
+}
+
+.vis .size-legend-items {
+  margin-left: -0.05rem;
+  margin-right: -0.05rem;
+}
+
+.vis .size-legend-item {
+  margin-left: 0.05rem;
+  margin-right: 0.05rem;
+}
+
+.vis .size-legend-label {
+  font-size: 0.75rem;
+}
 
 /* Butterfly */
 @media (min-width: 960px) {
   .vis-butterfly-wrapper {
-    max-height: 400px;
+    max-height: 600px;
     overflow-y: auto;
   }
 }
