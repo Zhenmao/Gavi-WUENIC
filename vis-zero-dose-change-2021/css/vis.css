@@ -1,0 +1,190 @@
+.vis *,
+.vis *::before,
+.vis *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.vis {
+  font-family: "Carnero W01 Regular", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgb(8, 47, 59);
+  margin: 2rem auto;
+  width: calc(100% - 1rem);
+  position: relative;
+}
+
+@media (min-width: 960px) {
+  .vis {
+    width: calc(100% - 4rem);
+    max-width: 1200px;
+  }
+}
+
+.vis .vis-title {
+  font-family: "Carnero W01 Bold", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.vis .vis-subtitle {
+  font-family: "Carnero W01 Bold", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.vis text {
+  font-family: "Carnero W01 Regular", "Arial", sans-serif;
+}
+
+.vis .vis-row {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.vis .vis-col {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1 1 0;
+}
+
+.vis .vis-col + .vis-col {
+  padding-top: 2rem;
+}
+
+.vis.vis-stack--lg > * + * {
+  margin-top: 3rem;
+}
+
+.vis .vis-stack > * + * {
+  margin-top: 2rem;
+}
+
+.vis .vis-stack--sm > * + * {
+  margin-top: 1rem;
+}
+
+.vis .vis-stack--xs > * + * {
+  margin-top: 0.5rem;
+}
+
+.vis .vis-side {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 960px) {
+  .vis .vis-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .vis .vis-col + .vis-col {
+    padding-top: 0;
+  }
+
+  .vis .vis-main {
+    flex: 1;
+  }
+
+  .vis .vis-side {
+    flex: 0 0 200px;
+    display: block;
+  }
+}
+
+/* Chart */
+.vis .chart-container {
+  position: relative;
+}
+
+.vis .chart-svg {
+  display: block;
+  width: 100%;
+}
+
+.vis .vis-map .country {
+  stroke: #b7b7b7;
+  stroke-width: 0.5px;
+}
+
+.vis .vis-map .country.is-highlighted {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.vis .vis-barcode .barcode__line {
+  stroke: #b7b7b7;
+  stroke-width: 1.5px;
+}
+
+.vis .vis-barcode .barcode.is-highlighted .barcode__line {
+  stroke: #000;
+}
+
+/* Legend */
+.vis .vis-map-legend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vis .swatches {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vis .swatch {
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.vis .swatch__swatch {
+  width: 20px;
+  height: 20px;
+}
+
+.vis .swatch__label {
+  line-height: 1.2;
+}
+
+/* Tooltip */
+.vis .vis-tooltip {
+  font-size: 0.875rem;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  width: auto;
+  max-width: 240px;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 14px 0 rgb(79 79 78 / 20%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+}
+
+.vis .vis-tooltip > dl > * + * {
+  margin-top: 0.5rem;
+}
+
+.vis .vis-tooltip dt {
+  font-family: "Carnero W01 Bold", "Arial", sans-serif;
+  font-weight: 700;
+}
+
+.vis .vis-tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
