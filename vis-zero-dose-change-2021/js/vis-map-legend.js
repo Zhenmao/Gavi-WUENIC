@@ -34,8 +34,8 @@ class VisMapLegend {
           .attr("class", "swatch__label")
           .text((d) => {
             const [min, max] = this.color.invertExtent(d);
-            if (min === undefined) return `≤${Math.floor(max)}`;
-            if (max === undefined) return `≥${Math.ceil(min)}`;
+            if (min === undefined) return `<${Math.floor(max)}`;
+            if (max === undefined) return `>${Math.ceil(min)}`;
             if (min * max > 0) return `${Math.ceil(min)} to ${Math.floor(max)}`;
             return "No Change";
           })

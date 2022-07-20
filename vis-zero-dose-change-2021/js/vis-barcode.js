@@ -10,31 +10,35 @@ class VisBarcode {
       top: 40,
       bottom: 40,
     };
-    this.height = 480;
+    this.height = 640;
     this.trackWidth = 20;
     this.barcodeWidth = 32;
 
     this.labelN = 3;
 
+    this.formatValue = d3.format("+,");
+
     this.color = d3
       .scalePoint()
       .domain([
-        "#742039",
-        "#d01e49",
-        "#ef4249",
-        "#fdbe22",
-        "#a5ce41",
-        "#59bb5f",
-        "#19b1c0",
+        "#6B2639",
+        "#BF334D",
+        "#E18F63",
+        "#F3C04B",
+        "#ADCD5A",
+        "#73B99C",
+        "#52AEBE",
       ])
       .range([0, 100]);
 
     const [min, max] = d3.extent(this.data.values(), (d) => d.dtp1ValueChange);
     const extreme = Math.max(Math.abs(min), max);
+
     this.y = d3
       .scaleLinear()
       .domain([-extreme, extreme])
-      .range([this.height - this.margin.bottom, this.margin.top]);
+      .range([this.height - this.margin.bottom, this.margin.top])
+      .nice();
 
     this.displayData = [...this.data.values()].sort((a, b) =>
       d3.ascending(a.dtp1ValueChange, b.dtp1ValueChange)
@@ -86,10 +90,10 @@ class VisBarcode {
 
     this.g
       .append("text")
-      .attr("fill", "currentColor")
+      .attr("fill", this.color.domain()[0])
       .attr("y", this.margin.top - 8)
       .selectAll("tspan")
-      .data(["ZD children", "Increase in"])
+      .data(["ZD children", this.formatValue(this.y.domain()[1])])
       .join("tspan")
       .attr("x", -this.trackWidth / 2)
       .attr("dy", (d, i) => `${-i * 1.2}em`)
@@ -97,10 +101,10 @@ class VisBarcode {
 
     this.g
       .append("text")
-      .attr("fill", "currentColor")
+      .attr("fill", this.color.domain()[this.color.domain().length - 1])
       .attr("y", this.height - this.margin.bottom + 8)
       .selectAll("tspan")
-      .data(["Decrease in", "ZD children"])
+      .data([this.formatValue(this.y.domain()[0]), "ZD children"])
       .join("tspan")
       .attr("x", -this.trackWidth / 2)
       .attr("dy", (d, i) => (i === 0 ? "0.71em" : `${i * 1.2}em`))
@@ -182,7 +186,7 @@ class VisBarcode {
     const formattedValueChange =
       d.dtp1ValueChange === 0
         ? "No Change"
-        : d3.format("+,")(d.dtp1ValueChange);
+        : this.formatValue(d.dtp1ValueChange);
 
     return `
       <dl>

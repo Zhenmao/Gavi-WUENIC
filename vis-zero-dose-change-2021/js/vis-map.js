@@ -27,13 +27,13 @@ class VisMap {
       .scaleThreshold()
       .domain([-6.5, -3.5, -0.5, 0.5, 3.5, 6.5])
       .range([
-        "#742039",
-        "#d01e49",
-        "#ef4249",
-        "#fdbe22",
-        "#a5ce41",
-        "#59bb5f",
-        "#19b1c0",
+        "#6B2639",
+        "#BF334D",
+        "#E18F63",
+        "#F3C04B",
+        "#ADCD5A",
+        "#73B99C",
+        "#52AEBE",
       ]);
 
     this.container = d3.select("#vis-map");
