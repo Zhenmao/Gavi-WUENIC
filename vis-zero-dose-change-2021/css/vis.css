@@ -29,6 +29,7 @@
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 1.2;
+  text-align: center;
 }
 
 .vis .vis-subtitle {
@@ -155,6 +156,7 @@
 
 .vis .swatch__label {
   padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
   line-height: 1.2;
 }
 
