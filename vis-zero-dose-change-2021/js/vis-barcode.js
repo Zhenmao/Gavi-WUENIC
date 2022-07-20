@@ -153,6 +153,11 @@ class VisBarcode {
           )
       );
 
+    this.container
+      .append("div")
+      .attr("class", "text-center")
+      .html("Change in # of <br/> ZD children");
+
     this.resize();
     window.addEventListener("resize", this.resize);
   }

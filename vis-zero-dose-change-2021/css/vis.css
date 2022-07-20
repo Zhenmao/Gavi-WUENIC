@@ -128,6 +128,10 @@
   stroke: #000;
 }
 
+.vis .text-center {
+  text-align: center;
+}
+
 /* Legend */
 .vis .vis-map-legend {
   display: flex;
