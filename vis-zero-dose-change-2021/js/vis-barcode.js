@@ -19,33 +19,47 @@ class VisBarcode {
 
     this.formatValue = d3.format("+,");
 
-    this.color = d3
-      .scalePoint()
-      .domain(
-        [
-          "#6B2639",
-          "#BF334D",
-          "#E18F63",
-          "#F3C04B",
-          "#ADCD5A",
-          "#73B99C",
-          "#52AEBE",
-        ].reverse()
-      )
-      .range([0, 100]);
-
     // const min = d3.min(this.data.values(), (d) =>
     //   d3.min(d.values.values(), (d) => d.dtp1ValueChange)
-    // );
+    // ); // -424321
     // const max = d3.max(this.data.values(), (d) =>
     //   d3.max(d.values.values(), (d) => d.dtp1ValueChange)
-    // );
-    // const extreme = Math.max(Math.abs(min), max); // 1557071
-    const extreme = 1600000;
+    // ); // 1557071
+    const min = -500000;
+    const max = 1600000;
+    const extreme = Math.max(Math.abs(min), max);
+
+    this.colorInterpolator = d3.piecewise(
+      d3.interpolateRgb.gamma(2.2),
+      [
+        "#6B2639",
+        "#BF334D",
+        "#E18F63",
+        "#F3C04B",
+        "#ADCD5A",
+        "#73B99C",
+        "#52AEBE",
+      ].reverse()
+    );
+
+    this.color = d3
+      .scaleSequential(this.colorInterpolator)
+      .domain([-extreme, extreme]);
+
+    this.value = d3.scaleLinear().domain([0, 100]).range([min, max]);
+
+    this.colorSteps = d3.range(0, 101, 10).map((offset) => {
+      const value = this.value(offset);
+      const color = this.color(value);
+      return {
+        offset,
+        color,
+      };
+    });
 
     this.y = d3
       .scaleLinear()
-      .domain([-extreme, extreme])
+      .domain([min, max])
       .range([this.margin.top, this.height - this.margin.bottom]);
 
     this.bisect = d3.bisector(
@@ -87,16 +101,16 @@ class VisBarcode {
       .attr("id", "barcode-gradient")
       .attr("gradientTransform", "rotate(90)")
       .selectAll("stop")
-      .data(this.color.domain())
+      .data(this.colorSteps)
       .join("stop")
-      .attr("offset", (d) => `${Math.round(this.color(d))}%`)
-      .attr("stop-color", (d) => d);
+      .attr("offset", (d) => `${d.offset}%`)
+      .attr("stop-color", (d) => d.color);
 
     this.g = this.svg.append("g");
 
     this.g
       .append("text")
-      .attr("fill", this.color.domain()[0])
+      .attr("fill", this.color(min))
       .attr("y", this.margin.top - 8)
       .selectAll("tspan")
       .data(["ZD children", this.formatValue(this.y.domain()[0])])
@@ -107,7 +121,7 @@ class VisBarcode {
 
     this.g
       .append("text")
-      .attr("fill", this.color.domain()[this.color.domain().length - 1])
+      .attr("fill", this.color(max))
       .attr("y", this.height - this.margin.bottom + 8)
       .selectAll("tspan")
       .data([this.formatValue(this.y.domain()[1]), "ZD children"])
