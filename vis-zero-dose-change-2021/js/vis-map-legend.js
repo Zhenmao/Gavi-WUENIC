@@ -1,6 +1,7 @@
 class VisMapLegend {
-  constructor({ color }) {
+  constructor({ color, selectedYear }) {
     this.color = color;
+    this.selectedYear = selectedYear;
     this.render();
   }
 
@@ -9,11 +10,7 @@ class VisMapLegend {
       .select("#vis-map-legend")
       .classed("vis-stack--xs", true);
 
-    this.container
-      .append("div")
-      .text(
-        "Percentage point (pp) difference in DTP3 vaccination, 2020 to 2021"
-      );
+    this.title = this.container.append("div");
 
     this.container
       .append("div")
@@ -40,5 +37,20 @@ class VisMapLegend {
             return "No Change";
           })
       );
+
+    this.renderTitle();
+  }
+
+  renderTitle() {
+    this.title.text(
+      `Percentage point (pp) difference in DTP3 vaccination, ${
+        this.selectedYear - 1
+      } to ${this.selectedYear}`
+    );
+  }
+
+  updateSelectedYear(selectedYear) {
+    this.selectedYear = selectedYear;
+    this.renderTitle();
   }
 }

@@ -1,6 +1,7 @@
 class VisBarcode {
-  constructor({ data }) {
+  constructor({ data, selectedYear }) {
     this.data = data;
+    this.selectedYear = selectedYear;
     this.resize = this.resize.bind(this);
     this.init();
   }
@@ -10,7 +11,7 @@ class VisBarcode {
       top: 40,
       bottom: 40,
     };
-    this.height = 640;
+    this.height = 680;
     this.trackWidth = 20;
     this.barcodeWidth = 32;
 
@@ -20,31 +21,36 @@ class VisBarcode {
 
     this.color = d3
       .scalePoint()
-      .domain([
-        "#6B2639",
-        "#BF334D",
-        "#E18F63",
-        "#F3C04B",
-        "#ADCD5A",
-        "#73B99C",
-        "#52AEBE",
-      ])
+      .domain(
+        [
+          "#6B2639",
+          "#BF334D",
+          "#E18F63",
+          "#F3C04B",
+          "#ADCD5A",
+          "#73B99C",
+          "#52AEBE",
+        ].reverse()
+      )
       .range([0, 100]);
 
-    const [min, max] = d3.extent(this.data.values(), (d) => d.dtp1ValueChange);
-    const extreme = Math.max(Math.abs(min), max);
+    // const min = d3.min(this.data.values(), (d) =>
+    //   d3.min(d.values.values(), (d) => d.dtp1ValueChange)
+    // );
+    // const max = d3.max(this.data.values(), (d) =>
+    //   d3.max(d.values.values(), (d) => d.dtp1ValueChange)
+    // );
+    // const extreme = Math.max(Math.abs(min), max); // 1557071
+    const extreme = 1600000;
 
     this.y = d3
       .scaleLinear()
       .domain([-extreme, extreme])
-      .range([this.height - this.margin.bottom, this.margin.top])
-      .nice();
+      .range([this.margin.top, this.height - this.margin.bottom]);
 
-    this.displayData = [...this.data.values()].sort((a, b) =>
-      d3.ascending(a.dtp1ValueChange, b.dtp1ValueChange)
-    );
-
-    this.bisect = d3.bisector((d) => d.dtp1ValueChange).center;
+    this.bisect = d3.bisector(
+      (d) => d.values.get(this.selectedYear).dtp1ValueChange
+    ).center;
 
     this.container = d3.select("#vis-barcode");
 
@@ -93,7 +99,7 @@ class VisBarcode {
       .attr("fill", this.color.domain()[0])
       .attr("y", this.margin.top - 8)
       .selectAll("tspan")
-      .data(["ZD children", this.formatValue(this.y.domain()[1])])
+      .data(["ZD children", this.formatValue(this.y.domain()[0])])
       .join("tspan")
       .attr("x", -this.trackWidth / 2)
       .attr("dy", (d, i) => `${-i * 1.2}em`)
@@ -104,7 +110,7 @@ class VisBarcode {
       .attr("fill", this.color.domain()[this.color.domain().length - 1])
       .attr("y", this.height - this.margin.bottom + 8)
       .selectAll("tspan")
-      .data([this.formatValue(this.y.domain()[0]), "ZD children"])
+      .data([this.formatValue(this.y.domain()[1]), "ZD children"])
       .join("tspan")
       .attr("x", -this.trackWidth / 2)
       .attr("dy", (d, i) => (i === 0 ? "0.71em" : `${i * 1.2}em`))
@@ -122,36 +128,12 @@ class VisBarcode {
     this.barcode = this.g
       .append("g")
       .attr("class", "barcodes")
-      .selectAll(".barcode")
-      .data(this.displayData, (d) => d.numericId)
-      .join((enter) =>
-        enter
-          .append("g")
-          .attr("class", "barcode")
-          .attr("transform", (d) => `translate(0,${this.y(d.dtp1ValueChange)})`)
-          .call((g) =>
-            g
-              .append("line")
-              .attr("class", "barcode__line")
-              .attr("x1", -this.barcodeWidth / 2)
-              .attr("x2", this.barcodeWidth / 2)
-          )
-          .call((g) =>
-            g
-              .filter(
-                (d, i) =>
-                  i < this.labelN ||
-                  i > this.displayData.length - this.labelN - 1
-              )
-              .append("text")
-              .attr("class", "barcode__label")
-              .attr("dy", "0.35em")
-              .attr("fill", "currentColor")
-              .attr("x", -this.barcodeWidth / 2 - 4)
-              .attr("text-anchor", "end")
-              .text((d) => d.id)
-          )
-      );
+      .selectAll(".barcode");
+
+    this.barcodeLabel = this.g
+      .append("g")
+      .attr("class", "barcode-labels")
+      .selectAll(".barcode-label");
 
     this.container
       .append("div")
@@ -160,12 +142,92 @@ class VisBarcode {
 
     this.resize();
     window.addEventListener("resize", this.resize);
+
+    this.wrangle();
   }
 
   resize() {
     this.width = this.container.node().clientWidth;
 
     this.svg.attr("viewBox", [-this.width / 2, 0, this.width, this.height]);
+
+    if (this.displayData) this.render();
+  }
+
+  wrangle() {
+    this.displayData = [...this.data.values()].sort((a, b) =>
+      d3.ascending(
+        a.values.get(this.selectedYear).dtp1ValueChange,
+        b.values.get(this.selectedYear).dtp1ValueChange
+      )
+    );
+
+    this.labelData = this.displayData.filter(
+      (d, i) => i < this.labelN || i > this.displayData.length - this.labelN - 1
+    );
+
+    this.render();
+  }
+
+  render() {
+    this.barcode = this.barcode
+      .data(this.displayData, (d) => d.numericId)
+      .join((enter) =>
+        enter
+          .append("line")
+          .attr("class", "barcode")
+          .attr("x1", -this.barcodeWidth / 2)
+          .attr("x2", this.barcodeWidth / 2)
+          .attr(
+            "transform",
+            (d) =>
+              `translate(0,${this.y(
+                d.values.get(this.selectedYear).dtp1ValueChange
+              )})`
+          )
+      );
+
+    this.barcodeLabel = this.barcodeLabel
+      .data(this.labelData, (d) => d.numericId)
+      .join((enter) =>
+        enter
+          .append("text")
+          .attr("class", "barcode-label")
+          .attr("dy", "0.35em")
+          .attr("fill", "currentColor")
+          .attr("x", -this.barcodeWidth / 2 - 4)
+          .attr("text-anchor", "end")
+          .attr(
+            "transform",
+            (d) =>
+              `translate(0,${this.y(
+                d.values.get(this.selectedYear).dtp1ValueChange
+              )})`
+          )
+          .text((d) => d.id)
+      )
+      .text((d) => d.id);
+
+    this.barcode
+      .transition()
+      .attr(
+        "transform",
+        (d) =>
+          `translate(0,${this.y(
+            d.values.get(this.selectedYear).dtp1ValueChange
+          )})`
+      );
+
+    let previousLabelY = -Infinity;
+    const labelYMinDistance = 12;
+    this.barcodeLabel.transition().attr("transform", (d) => {
+      const labelY = this.y(d.values.get(this.selectedYear).dtp1ValueChange);
+      previousLabelY =
+        labelY - previousLabelY < labelYMinDistance
+          ? previousLabelY + labelYMinDistance
+          : labelY;
+      return `translate(0,${previousLabelY})`;
+    });
   }
 
   highlight(id) {
@@ -173,7 +235,10 @@ class VisBarcode {
     if (id) {
       const d = this.data.get(id);
       this.tooltip.show(this.tooltipContent(d));
-      this.tooltip.move(this.width / 2, this.y(d.dtp1ValueChange));
+      this.tooltip.move(
+        this.width / 2,
+        this.y(d.values.get(this.selectedYear).dtp1ValueChange)
+      );
       this.barcode.classed("is-highlighted", function (e) {
         if (e.numericId === id) {
           d3.select(this).raise();
@@ -188,10 +253,15 @@ class VisBarcode {
   }
 
   tooltipContent(d) {
+    const v = d.values.get(this.selectedYear);
     const formattedValueChange =
-      d.dtp1ValueChange === 0
+      v.dtp1ValueChange === 0
         ? "No Change"
-        : this.formatValue(d.dtp1ValueChange);
+        : this.formatValue(v.dtp1ValueChange);
+    const formattedPercentageChange =
+      v.dtp1PercentageChange === 0
+        ? "No Change"
+        : d3.format("+")(v.dtp1PercentageChange) + "%";
 
     return `
       <dl>
@@ -203,7 +273,16 @@ class VisBarcode {
           <dt>ZD Children Change</dt>
           <dd>${formattedValueChange}</dd>
         </div>
+        <div>
+          <dt>ZD % change</dt>
+          <dd>${formattedPercentageChange}</dd>
+        </div>
       </dl>
     `;
+  }
+
+  updateSelectedYear(selectedYear) {
+    this.selectedYear = selectedYear;
+    this.wrangle();
   }
 }

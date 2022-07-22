@@ -10,13 +10,23 @@ Promise.all([
 ]).then(([mapCSV, codes, world]) => {
   const data = visProcessData(mapCSV, codes);
 
+  let selectedYear = +d3.select("input[name='year']:checked").attr("value");
+
   const map = new VisMap({
     data,
     world,
+    selectedYear,
   });
 
   const barcode = new VisBarcode({
     data,
+    selectedYear,
+  });
+
+  d3.selectAll("input[name='year']").on("change", (event) => {
+    selectedYear = +event.target.value;
+    map.updateSelectedYear(selectedYear);
+    barcode.updateSelectedYear(selectedYear);
   });
 
   d3.select("#vis").on("highlight", (event) => {

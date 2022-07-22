@@ -99,6 +99,15 @@
   }
 }
 
+.vis .vis-year-control {
+  display: flex;
+  justify-content: center;
+}
+
+.vis .vis-year-control > * + * {
+  margin-left: 1rem;
+}
+
 /* Chart */
 .vis .chart-container {
   position: relative;
@@ -119,12 +128,12 @@
   stroke-width: 1.5px;
 }
 
-.vis .vis-barcode .barcode__line {
+.vis .vis-barcode .barcode {
   stroke: #b7b7b7;
   stroke-width: 1.5px;
 }
 
-.vis .vis-barcode .barcode.is-highlighted .barcode__line {
+.vis .vis-barcode .barcode.is-highlighted {
   stroke: #000;
 }
 

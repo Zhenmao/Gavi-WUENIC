@@ -8,36 +8,61 @@ function visProcessData(csv, codes) {
     year: (d) => +d.year,
     coverage: (d) => +d.coverage,
     zeroDose: (d) => +d.zero_dose,
+    zeroDosePercentage: (d) => +d.pct_zero_dose,
   };
 
   const data = d3.rollup(
     csv,
     (v) => {
-      const dtp3PercentageChange =
-        accessor.coverage(
+      const values = new Map();
+      [2020, 2021].forEach((year) => {
+        const dtp3PercentagePrevious = accessor.coverage(
           v.find(
-            (d) => accessor.vaccine(d) === "dtp3" && accessor.year(d) === 2021
-          )
-        ) -
-        accessor.coverage(
-          v.find(
-            (d) => accessor.vaccine(d) === "dtp3" && accessor.year(d) === 2020
+            (d) =>
+              accessor.vaccine(d) === "dtp3" && accessor.year(d) === year - 1
           )
         );
-      const dtp1ValueChange =
-        accessor.zeroDose(
+        const dtp3PercentageCurrent = accessor.coverage(
           v.find(
-            (d) => accessor.vaccine(d) === "dtp1" && accessor.year(d) === 2021
-          )
-        ) -
-        accessor.zeroDose(
-          v.find(
-            (d) => accessor.vaccine(d) === "dtp1" && accessor.year(d) === 2020
+            (d) => accessor.vaccine(d) === "dtp3" && accessor.year(d) === year
           )
         );
+        const dtp3PercentageChange =
+          dtp3PercentageCurrent - dtp3PercentagePrevious;
+        const dtp1PercentageChange =
+          accessor.zeroDosePercentage(
+            v.find(
+              (d) => accessor.vaccine(d) === "dtp1" && accessor.year(d) === year
+            )
+          ) -
+          accessor.zeroDosePercentage(
+            v.find(
+              (d) =>
+                accessor.vaccine(d) === "dtp1" && accessor.year(d) === year - 1
+            )
+          );
+        const dtp1ValueChange =
+          accessor.zeroDose(
+            v.find(
+              (d) => accessor.vaccine(d) === "dtp1" && accessor.year(d) === year
+            )
+          ) -
+          accessor.zeroDose(
+            v.find(
+              (d) =>
+                accessor.vaccine(d) === "dtp1" && accessor.year(d) === year - 1
+            )
+          );
+        values.set(year, {
+          dtp3PercentagePrevious,
+          dtp3PercentageCurrent,
+          dtp3PercentageChange,
+          dtp1PercentageChange,
+          dtp1ValueChange,
+        });
+      });
       return {
-        dtp3PercentageChange,
-        dtp1ValueChange,
+        values,
         country: accessor.country(v[0]),
         id: accessor.id(v[0]),
         numericId: accessor.numericId(v[0]),

@@ -1,7 +1,8 @@
 class VisMap {
-  constructor({ data, world }) {
+  constructor({ data, world, selectedYear }) {
     this.data = data;
     this.world = world;
+    this.selectedYear = selectedYear;
     this.resize = this.resize.bind(this);
     this.init();
   }
@@ -43,8 +44,9 @@ class VisMap {
       container: this.container,
     });
 
-    new VisMapLegend({
+    this.legend = new VisMapLegend({
       color: this.color,
+      selectedYear: this.selectedYear,
     });
 
     this.g = this.svg.append("g");
@@ -90,13 +92,7 @@ class VisMap {
         enter
           .append("path")
           .attr("class", "country")
-          .attr("fill", (d) => {
-            if (this.data.has(d.id)) {
-              return this.color(this.data.get(d.id).dtp3PercentageChange);
-            } else {
-              return "#d8d8d8";
-            }
-          })
+          .attr("fill", "#d8d8d8")
           .call((enter) =>
             enter
               .filter((d) => this.data.has(d.id))
@@ -118,6 +114,15 @@ class VisMap {
           )
       )
       .attr("d", this.geoPath);
+    this.country.transition().attr("fill", (d) => {
+      if (this.data.has(d.id)) {
+        return this.color(
+          this.data.get(d.id).values.get(this.selectedYear).dtp3PercentageChange
+        );
+      } else {
+        return "#d8d8d8";
+      }
+    });
   }
 
   highlight(id) {
@@ -139,10 +144,13 @@ class VisMap {
   }
 
   tooltipContent(d) {
+    const v = d.values.get(this.selectedYear);
+    const formattedPercentagePrevious = v.dtp3PercentagePrevious + "%";
+    const formattedPercentageCurrent = v.dtp3PercentageCurrent + "%";
     const formattedPercentageChange =
-      d.dtp3PercentageChange === 0
+      v.dtp3PercentageChange === 0
         ? "No Change"
-        : d3.format("+")(d.dtp3PercentageChange);
+        : d3.format("+")(v.dtp3PercentageChange);
 
     return `
       <dl>
@@ -151,10 +159,25 @@ class VisMap {
           <dd>${d.country}</dd>
         </div>
         <div>
+          <dt>DTP Coverage ${this.selectedYear - 1}</dt>
+          <dd>${formattedPercentagePrevious}</dd>
+        </div>
+        <div>
+          <dt>DTP Coverage ${this.selectedYear}</dt>
+          <dd>${formattedPercentageCurrent}</dd>
+        </div>
+        <div>
           <dt>PP Difference</dt>
           <dd>${formattedPercentageChange}</dd>
         </div>
       </dl>
     `;
+  }
+
+  updateSelectedYear(selectedYear) {
+    this.selectedYear = selectedYear;
+    this.render();
+
+    this.legend.updateSelectedYear(selectedYear);
   }
 }

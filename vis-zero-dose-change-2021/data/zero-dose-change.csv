@@ -1,229 +1,343 @@
-﻿iso3,cname,vaccine,year,coverage,zero_dose
-AFG,Afghanistan,dtp1,2020,78,296837
-AFG,Afghanistan,dtp1,2021,74,360765
-AFG,Afghanistan,dtp3,2020,70,
-AFG,Afghanistan,dtp3,2021,66,
-BDI,Burundi,dtp1,2020,98,8421
-BDI,Burundi,dtp1,2021,96,16946
-BDI,Burundi,dtp3,2020,93,
-BDI,Burundi,dtp3,2021,94,
-BEN,Benin,dtp1,2020,83,76195
-BEN,Benin,dtp1,2021,84,72787
-BEN,Benin,dtp3,2020,72,
-BEN,Benin,dtp3,2021,76,
-BFA,Burkina Faso,dtp1,2020,95,37240
-BFA,Burkina Faso,dtp1,2021,95,37706
-BFA,Burkina Faso,dtp3,2020,91,
-BFA,Burkina Faso,dtp3,2021,91,
-BGD,Bangladesh,dtp1,2020,99,29581
-BGD,Bangladesh,dtp1,2021,99,29577
-BGD,Bangladesh,dtp3,2020,98,
-BGD,Bangladesh,dtp3,2021,98,
-CAF,Central African Republic,dtp1,2020,54,98488
-CAF,Central African Republic,dtp1,2021,54,102416
-CAF,Central African Republic,dtp3,2020,42,
-CAF,Central African Republic,dtp3,2021,42,
-CIV,Côte d'Ivoire,dtp1,2020,84,140148
-CIV,Côte d'Ivoire,dtp1,2021,85,133748
-CIV,Côte d'Ivoire,dtp3,2020,75,
-CIV,Côte d'Ivoire,dtp3,2021,76,
-CMR,Cameroon,dtp1,2020,77,207739
-CMR,Cameroon,dtp1,2021,76,219207
-CMR,Cameroon,dtp3,2020,69,
-CMR,Cameroon,dtp3,2021,69,
-COD,Democratic Republic of the Congo,dtp1,2020,83,639199
-COD,Democratic Republic of the Congo,dtp1,2021,81,734287
-COD,Democratic Republic of the Congo,dtp3,2020,70,
-COD,Democratic Republic of the Congo,dtp3,2021,65,
-COG,Congo,dtp1,2020,77,39730
-COG,Congo,dtp1,2021,81,33114
-COG,Congo,dtp3,2020,73,
-COG,Congo,dtp3,2021,77,
-COM,Comoros,dtp1,2020,93,1625
-COM,Comoros,dtp1,2021,95,1164
-COM,Comoros,dtp3,2020,87,
-COM,Comoros,dtp3,2021,85,
-DJI,Djibouti,dtp1,2020,76,5683
-DJI,Djibouti,dtp1,2021,70,7122
-DJI,Djibouti,dtp3,2020,70,
-DJI,Djibouti,dtp3,2021,59,
-ERI,Eritrea,dtp1,2020,97,2990
-ERI,Eritrea,dtp1,2021,97,3037
-ERI,Eritrea,dtp3,2020,95,
-ERI,Eritrea,dtp3,2021,95,
-ETH,Ethiopia,dtp1,2020,76,894034
-ETH,Ethiopia,dtp1,2021,70,1134182
-ETH,Ethiopia,dtp3,2020,71,
-ETH,Ethiopia,dtp3,2021,65,
-GHA,Ghana,dtp1,2020,94,52595
-GHA,Ghana,dtp1,2021,99,8796
-GHA,Ghana,dtp3,2020,94,
-GHA,Ghana,dtp3,2021,98,
-GIN,Guinea,dtp1,2020,62,166511
-GIN,Guinea,dtp1,2021,62,168258
-GIN,Guinea,dtp3,2020,47,
-GIN,Guinea,dtp3,2021,47,
-GMB,Gambia,dtp1,2020,88,10136
-GMB,Gambia,dtp1,2021,82,15391
-GMB,Gambia,dtp3,2020,85,
-GMB,Gambia,dtp3,2021,82,
-GNB,Guinea-Bissau,dtp1,2020,87,7941
-GNB,Guinea-Bissau,dtp1,2021,81,11680
-GNB,Guinea-Bissau,dtp3,2020,74,
-GNB,Guinea-Bissau,dtp3,2021,67,
-HTI,Haiti,dtp1,2020,75,65158
-HTI,Haiti,dtp1,2021,75,64788
-HTI,Haiti,dtp3,2020,51,
-HTI,Haiti,dtp3,2021,51,
-IND,India,dtp1,2020,87,2937372
-IND,India,dtp1,2021,88,2710956
-IND,India,dtp3,2020,85,
-IND,India,dtp3,2021,85,
-KEN,Kenya,dtp1,2020,94,85044
-KEN,Kenya,dtp1,2021,99,14302
-KEN,Kenya,dtp3,2020,89,
-KEN,Kenya,dtp3,2021,91,
-KGZ,Kyrgyzstan,dtp1,2020,90,15836
-KGZ,Kyrgyzstan,dtp1,2021,89,17114
-KGZ,Kyrgyzstan,dtp3,2020,87,
-KGZ,Kyrgyzstan,dtp3,2021,89,
-KHM,Cambodia,dtp1,2020,94,19162
-KHM,Cambodia,dtp1,2021,94,18896
-KHM,Cambodia,dtp3,2020,92,
-KHM,Cambodia,dtp3,2021,92,
-LAO,Lao People's Democratic Republic,dtp1,2020,87,20727
-LAO,Lao People's Democratic Republic,dtp1,2021,85,23766
-LAO,Lao People's Democratic Republic,dtp3,2020,79,
-LAO,Lao People's Democratic Republic,dtp3,2021,75,
-LBR,Liberia,dtp1,2020,82,27737
-LBR,Liberia,dtp1,2021,81,29523
-LBR,Liberia,dtp3,2020,65,
-LBR,Liberia,dtp3,2021,66,
-LSO,Lesotho,dtp1,2020,92,4517
-LSO,Lesotho,dtp1,2021,92,4528
-LSO,Lesotho,dtp3,2020,87,
-LSO,Lesotho,dtp3,2021,87,
-MDG,Madagascar,dtp1,2020,73,231496
-MDG,Madagascar,dtp1,2021,65,303775
-MDG,Madagascar,dtp3,2020,66,
-MDG,Madagascar,dtp3,2021,55,
-MLI,Mali,dtp1,2020,75,212865
-MLI,Mali,dtp1,2021,82,157055
-MLI,Mali,dtp3,2020,70,
-MLI,Mali,dtp3,2021,77,
-MMR,Myanmar,dtp1,2020,87,117072
-MMR,Myanmar,dtp1,2021,45,491542
-MMR,Myanmar,dtp3,2020,84,
-MMR,Myanmar,dtp3,2021,37,
-MOZ,Mozambique,dtp1,2020,83,187708
-MOZ,Mozambique,dtp1,2021,67,371514
-MOZ,Mozambique,dtp3,2020,79,
-MOZ,Mozambique,dtp3,2021,61,
-MRT,Mauritania,dtp1,2020,80,28946
-MRT,Mauritania,dtp1,2021,75,36891
-MRT,Mauritania,dtp3,2020,72,
-MRT,Mauritania,dtp3,2021,68,
-MWI,Malawi,dtp1,2020,95,31396
-MWI,Malawi,dtp1,2021,95,31893
-MWI,Malawi,dtp3,2020,94,
-MWI,Malawi,dtp3,2021,93,
-NER,Niger,dtp1,2020,93,74893
-NER,Niger,dtp1,2021,94,66241
-NER,Niger,dtp3,2020,81,
-NER,Niger,dtp3,2021,82,
-NGA,Nigeria,dtp1,2020,70,2212051
-NGA,Nigeria,dtp1,2021,70,2247212
-NGA,Nigeria,dtp3,2020,56,
-NGA,Nigeria,dtp3,2021,56,
-NIC,Nicaragua,dtp1,2020,94,8379
-NIC,Nicaragua,dtp1,2021,88,16677
-NIC,Nicaragua,dtp3,2020,92,
-NIC,Nicaragua,dtp3,2021,87,
-NPL,Nepal,dtp1,2020,89,64884
-NPL,Nepal,dtp1,2021,92,47790
-NPL,Nepal,dtp3,2020,84,
-NPL,Nepal,dtp3,2021,91,
-PAK,Pakistan,dtp1,2020,83,1034885
-PAK,Pakistan,dtp1,2021,90,610564
-PAK,Pakistan,dtp3,2020,77,
-PAK,Pakistan,dtp3,2021,83,
-PNG,Papua New Guinea,dtp1,2020,48,127802
-PNG,Papua New Guinea,dtp1,2021,39,150267
-PNG,Papua New Guinea,dtp3,2020,39,
-PNG,Papua New Guinea,dtp3,2021,31,
-PRK,Democratic People's Republic of Korea,dtp1,2020,98,6817
-PRK,Democratic People's Republic of Korea,dtp1,2021,42,197227
-PRK,Democratic People's Republic of Korea,dtp3,2020,97,
-PRK,Democratic People's Republic of Korea,dtp3,2021,41,
-RWA,Rwanda,dtp1,2020,91,34926
-RWA,Rwanda,dtp1,2021,90,39345
-RWA,Rwanda,dtp3,2020,91,
-RWA,Rwanda,dtp3,2021,88,
-SDN,Sudan,dtp1,2020,96,58801
-SDN,Sudan,dtp1,2021,94,89039
-SDN,Sudan,dtp3,2020,90,
-SDN,Sudan,dtp3,2021,84,
-SEN,Senegal,dtp1,2020,93,37178
-SEN,Senegal,dtp1,2021,87,69952
-SEN,Senegal,dtp3,2020,91,
-SEN,Senegal,dtp3,2021,85,
-SLB,Solomon Islands,dtp1,2020,98,412
-SLB,Solomon Islands,dtp1,2021,95,1040
-SLB,Solomon Islands,dtp3,2020,94,
-SLB,Solomon Islands,dtp3,2021,87,
-SLE,Sierra Leone,dtp1,2020,93,17416
-SLE,Sierra Leone,dtp1,2021,94,15020
-SLE,Sierra Leone,dtp3,2020,91,
-SLE,Sierra Leone,dtp3,2021,92,
-SOM,Somalia,dtp1,2020,52,330446
-SOM,Somalia,dtp1,2021,52,337948
-SOM,Somalia,dtp3,2020,42,
-SOM,Somalia,dtp3,2021,42,
-SSD,South Sudan,dtp1,2020,51,144622
-SSD,South Sudan,dtp1,2021,51,145940
-SSD,South Sudan,dtp3,2020,49,
-SSD,South Sudan,dtp3,2021,49,
-STP,Sao Tome and Principe,dtp1,2020,97,184
-STP,Sao Tome and Principe,dtp1,2021,97,188
-STP,Sao Tome and Principe,dtp3,2020,96,
-STP,Sao Tome and Principe,dtp3,2021,97,
-SYR,Syrian Arab Republic,dtp1,2020,65,139809
-SYR,Syrian Arab Republic,dtp1,2021,65,146984
-SYR,Syrian Arab Republic,dtp3,2020,49,
-SYR,Syrian Arab Republic,dtp3,2021,48,
-TCD,Chad,dtp1,2020,69,214252
-TCD,Chad,dtp1,2021,73,190658
-TCD,Chad,dtp3,2020,52,
-TCD,Chad,dtp3,2021,58,
-TGO,Togo,dtp1,2020,87,34125
-TGO,Togo,dtp1,2021,88,31838
-TGO,Togo,dtp3,2020,82,
-TGO,Togo,dtp3,2021,83,
-TJK,Tajikistan,dtp1,2020,98,5126
-TJK,Tajikistan,dtp1,2021,97,7638
-TJK,Tajikistan,dtp3,2020,97,
-TJK,Tajikistan,dtp3,2021,97,
-TZA,United Republic of Tanzania,dtp1,2020,88,263300
-TZA,United Republic of Tanzania,dtp1,2021,82,402373
-TZA,United Republic of Tanzania,dtp3,2020,86,
-TZA,United Republic of Tanzania,dtp3,2021,81,
-UGA,Uganda,dtp1,2020,94,96513
-UGA,Uganda,dtp1,2021,97,49266
-UGA,Uganda,dtp3,2020,89,
-UGA,Uganda,dtp3,2021,91,
-UZB,Uzbekistan,dtp1,2020,96,32919
-UZB,Uzbekistan,dtp1,2021,99,7946
-UZB,Uzbekistan,dtp3,2020,95,
-UZB,Uzbekistan,dtp3,2021,98,
-YEM,Yemen,dtp1,2020,83,165254
-YEM,Yemen,dtp1,2021,82,174613
-YEM,Yemen,dtp3,2020,72,
-YEM,Yemen,dtp3,2021,72,
-ZMB,Zambia,dtp1,2020,88,76584
-ZMB,Zambia,dtp1,2021,94,38957
-ZMB,Zambia,dtp3,2020,84,
-ZMB,Zambia,dtp3,2021,91,
-ZWE,Zimbabwe,dtp1,2020,93,32985
-ZWE,Zimbabwe,dtp1,2021,93,33150
-ZWE,Zimbabwe,dtp3,2020,86,
-ZWE,Zimbabwe,dtp3,2021,86,
+﻿iso3,cname,vaccine,year,age_group,coverage,zero_dose,pct_zero_dose
+AFG,Afghanistan,dtp1,2019,si,75,331181,25
+AFG,Afghanistan,dtp1,2020,si,78,296837,22
+AFG,Afghanistan,dtp1,2021,si,74,360765,26
+AFG,Afghanistan,dtp3,2019,si,72,,
+AFG,Afghanistan,dtp3,2020,si,70,,
+AFG,Afghanistan,dtp3,2021,si,66,,
+BDI,Burundi,dtp1,2019,si,97,12499,3
+BDI,Burundi,dtp1,2020,si,98,8421,2
+BDI,Burundi,dtp1,2021,si,96,16946,4
+BDI,Burundi,dtp3,2019,si,93,,
+BDI,Burundi,dtp3,2020,si,93,,
+BDI,Burundi,dtp3,2021,si,94,,
+BEN,Benin,dtp1,2019,si,84,70694,16
+BEN,Benin,dtp1,2020,si,83,76195,17
+BEN,Benin,dtp1,2021,si,84,72787,16
+BEN,Benin,dtp3,2019,si,76,,
+BEN,Benin,dtp3,2020,si,72,,
+BEN,Benin,dtp3,2021,si,76,,
+BFA,Burkina Faso,dtp1,2019,si,95,36840,5
+BFA,Burkina Faso,dtp1,2020,si,95,37240,5
+BFA,Burkina Faso,dtp1,2021,si,95,37706,5
+BFA,Burkina Faso,dtp3,2019,si,91,,
+BFA,Burkina Faso,dtp3,2020,si,91,,
+BFA,Burkina Faso,dtp3,2021,si,91,,
+BGD,Bangladesh,dtp1,2019,si,99,29724,1
+BGD,Bangladesh,dtp1,2020,si,99,29581,1
+BGD,Bangladesh,dtp1,2021,si,99,29577,1
+BGD,Bangladesh,dtp3,2019,si,98,,
+BGD,Bangladesh,dtp3,2020,si,98,,
+BGD,Bangladesh,dtp3,2021,si,98,,
+CAF,Central African Republic,dtp1,2019,si,54,95451,46
+CAF,Central African Republic,dtp1,2020,si,54,98488,46
+CAF,Central African Republic,dtp1,2021,si,54,102416,46
+CAF,Central African Republic,dtp3,2019,si,42,,
+CAF,Central African Republic,dtp3,2020,si,42,,
+CAF,Central African Republic,dtp3,2021,si,42,,
+CIV,Côte d'Ivoire,dtp1,2019,si,92,68990,8
+CIV,Côte d'Ivoire,dtp1,2020,si,84,140148,16
+CIV,Côte d'Ivoire,dtp1,2021,si,85,133748,15
+CIV,Côte d'Ivoire,dtp3,2019,si,81,,
+CIV,Côte d'Ivoire,dtp3,2020,si,75,,
+CIV,Côte d'Ivoire,dtp3,2021,si,76,,
+CMR,Cameroon,dtp1,2019,si,75,223522,25
+CMR,Cameroon,dtp1,2020,si,77,207739,23
+CMR,Cameroon,dtp1,2021,si,76,219207,24
+CMR,Cameroon,dtp3,2019,si,67,,
+CMR,Cameroon,dtp3,2020,si,69,,
+CMR,Cameroon,dtp3,2021,si,69,,
+COD,Democratic Republic of the Congo,dtp1,2019,si,84,587084,16
+COD,Democratic Republic of the Congo,dtp1,2020,si,83,639199,17
+COD,Democratic Republic of the Congo,dtp1,2021,si,81,734287,19
+COD,Democratic Republic of the Congo,dtp3,2019,si,73,,
+COD,Democratic Republic of the Congo,dtp3,2020,si,70,,
+COD,Democratic Republic of the Congo,dtp3,2021,si,65,,
+COG,Congo,dtp1,2019,si,82,30822,18
+COG,Congo,dtp1,2020,si,77,39730,23
+COG,Congo,dtp1,2021,si,81,33114,19
+COG,Congo,dtp3,2019,si,79,,
+COG,Congo,dtp3,2020,si,73,,
+COG,Congo,dtp3,2021,si,77,,
+COM,Comoros,dtp1,2019,si,96,926,4
+COM,Comoros,dtp1,2020,si,93,1625,7
+COM,Comoros,dtp1,2021,si,95,1164,5
+COM,Comoros,dtp3,2019,si,91,,
+COM,Comoros,dtp3,2020,si,87,,
+COM,Comoros,dtp3,2021,si,85,,
+DJI,Djibouti,dtp1,2019,si,90,2358,10
+DJI,Djibouti,dtp1,2020,si,76,5683,24
+DJI,Djibouti,dtp1,2021,si,70,7122,30
+DJI,Djibouti,dtp3,2019,si,85,,
+DJI,Djibouti,dtp3,2020,si,70,,
+DJI,Djibouti,dtp3,2021,si,59,,
+ERI,Eritrea,dtp1,2019,si,97,2970,3
+ERI,Eritrea,dtp1,2020,si,97,2990,3
+ERI,Eritrea,dtp1,2021,si,97,3037,3
+ERI,Eritrea,dtp3,2019,si,95,,
+ERI,Eritrea,dtp3,2020,si,95,,
+ERI,Eritrea,dtp3,2021,si,95,,
+ETH,Ethiopia,dtp1,2019,si,76,879223,24
+ETH,Ethiopia,dtp1,2020,si,76,894034,24
+ETH,Ethiopia,dtp1,2021,si,70,1134182,30
+ETH,Ethiopia,dtp3,2019,si,68,,
+ETH,Ethiopia,dtp3,2020,si,71,,
+ETH,Ethiopia,dtp3,2021,si,65,,
+GHA,Ghana,dtp1,2019,si,97,26240,3
+GHA,Ghana,dtp1,2020,si,94,52595,6
+GHA,Ghana,dtp1,2021,si,99,8796,1
+GHA,Ghana,dtp3,2019,si,97,,
+GHA,Ghana,dtp3,2020,si,94,,
+GHA,Ghana,dtp3,2021,si,98,,
+GIN,Guinea,dtp1,2019,si,62,164515,38
+GIN,Guinea,dtp1,2020,si,62,166511,38
+GIN,Guinea,dtp1,2021,si,62,168258,38
+GIN,Guinea,dtp3,2019,si,47,,
+GIN,Guinea,dtp3,2020,si,47,,
+GIN,Guinea,dtp3,2021,si,47,,
+GMB,Gambia,dtp1,2019,si,93,5857,7
+GMB,Gambia,dtp1,2020,si,88,10136,12
+GMB,Gambia,dtp1,2021,si,82,15391,18
+GMB,Gambia,dtp3,2019,si,88,,
+GMB,Gambia,dtp3,2020,si,85,,
+GMB,Gambia,dtp3,2021,si,82,,
+GNB,Guinea-Bissau,dtp1,2019,si,86,8479,14
+GNB,Guinea-Bissau,dtp1,2020,si,87,7941,13
+GNB,Guinea-Bissau,dtp1,2021,si,81,11680,19
+GNB,Guinea-Bissau,dtp3,2019,si,78,,
+GNB,Guinea-Bissau,dtp3,2020,si,74,,
+GNB,Guinea-Bissau,dtp3,2021,si,67,,
+HTI,Haiti,dtp1,2019,si,75,65254,25
+HTI,Haiti,dtp1,2020,si,75,65158,25
+HTI,Haiti,dtp1,2021,si,75,64788,25
+HTI,Haiti,dtp3,2019,si,51,,
+HTI,Haiti,dtp3,2020,si,51,,
+HTI,Haiti,dtp3,2021,si,51,,
+IND,India,dtp1,2019,si,94,1380301,6
+IND,India,dtp1,2020,si,87,2937372,13
+IND,India,dtp1,2021,si,88,2710956,12
+IND,India,dtp3,2019,si,91,,
+IND,India,dtp3,2020,si,85,,
+IND,India,dtp3,2021,si,85,,
+KEN,Kenya,dtp1,2019,si,97,42360,3
+KEN,Kenya,dtp1,2020,si,94,85044,6
+KEN,Kenya,dtp1,2021,si,99,14302,1
+KEN,Kenya,dtp3,2019,si,91,,
+KEN,Kenya,dtp3,2020,si,89,,
+KEN,Kenya,dtp3,2021,si,91,,
+KGZ,Kyrgyzstan,dtp1,2019,si,99,1645,1
+KGZ,Kyrgyzstan,dtp1,2020,si,90,15836,10
+KGZ,Kyrgyzstan,dtp1,2021,si,89,17114,11
+KGZ,Kyrgyzstan,dtp3,2019,si,95,,
+KGZ,Kyrgyzstan,dtp3,2020,si,87,,
+KGZ,Kyrgyzstan,dtp3,2021,si,89,,
+KHM,Cambodia,dtp1,2019,si,94,19358,6
+KHM,Cambodia,dtp1,2020,si,94,19162,6
+KHM,Cambodia,dtp1,2021,si,94,18896,6
+KHM,Cambodia,dtp3,2019,si,92,,
+KHM,Cambodia,dtp3,2020,si,92,,
+KHM,Cambodia,dtp3,2021,si,92,,
+LAO,Lao People's Democratic Republic,dtp1,2019,si,86,22304,14
+LAO,Lao People's Democratic Republic,dtp1,2020,si,87,20727,13
+LAO,Lao People's Democratic Republic,dtp1,2021,si,85,23766,15
+LAO,Lao People's Democratic Republic,dtp3,2019,si,80,,
+LAO,Lao People's Democratic Republic,dtp3,2020,si,79,,
+LAO,Lao People's Democratic Republic,dtp3,2021,si,75,,
+LBR,Liberia,dtp1,2019,si,86,21457,14
+LBR,Liberia,dtp1,2020,si,82,27737,18
+LBR,Liberia,dtp1,2021,si,81,29523,19
+LBR,Liberia,dtp3,2019,si,70,,
+LBR,Liberia,dtp3,2020,si,65,,
+LBR,Liberia,dtp3,2021,si,66,,
+LSO,Lesotho,dtp1,2019,si,92,4537,8
+LSO,Lesotho,dtp1,2020,si,92,4517,8
+LSO,Lesotho,dtp1,2021,si,92,4528,8
+LSO,Lesotho,dtp3,2019,si,87,,
+LSO,Lesotho,dtp3,2020,si,87,,
+LSO,Lesotho,dtp3,2021,si,87,,
+MDG,Madagascar,dtp1,2019,si,76,202878,24
+MDG,Madagascar,dtp1,2020,si,73,231496,27
+MDG,Madagascar,dtp1,2021,si,65,303775,35
+MDG,Madagascar,dtp3,2019,si,68,,
+MDG,Madagascar,dtp3,2020,si,66,,
+MDG,Madagascar,dtp3,2021,si,55,,
+MLI,Mali,dtp1,2019,si,82,149810,18
+MLI,Mali,dtp1,2020,si,75,212865,25
+MLI,Mali,dtp1,2021,si,82,157055,18
+MLI,Mali,dtp3,2019,si,77,,
+MLI,Mali,dtp3,2020,si,70,,
+MLI,Mali,dtp3,2021,si,77,,
+MMR,Myanmar,dtp1,2019,si,93,63637,7
+MMR,Myanmar,dtp1,2020,si,87,117072,13
+MMR,Myanmar,dtp1,2021,si,45,491542,55
+MMR,Myanmar,dtp3,2019,si,90,,
+MMR,Myanmar,dtp3,2020,si,84,,
+MMR,Myanmar,dtp3,2021,si,37,,
+MOZ,Mozambique,dtp1,2019,si,91,97446,9
+MOZ,Mozambique,dtp1,2020,si,83,187708,17
+MOZ,Mozambique,dtp1,2021,si,67,371514,33
+MOZ,Mozambique,dtp3,2019,si,88,,
+MOZ,Mozambique,dtp3,2020,si,79,,
+MOZ,Mozambique,dtp3,2021,si,61,,
+MRT,Mauritania,dtp1,2019,si,88,17062,12
+MRT,Mauritania,dtp1,2020,si,80,28946,20
+MRT,Mauritania,dtp1,2021,si,75,36891,25
+MRT,Mauritania,dtp3,2019,si,80,,
+MRT,Mauritania,dtp3,2020,si,72,,
+MRT,Mauritania,dtp3,2021,si,68,,
+MWI,Malawi,dtp1,2019,si,97,18524,3
+MWI,Malawi,dtp1,2020,si,95,31396,5
+MWI,Malawi,dtp1,2021,si,95,31893,5
+MWI,Malawi,dtp3,2019,si,95,,
+MWI,Malawi,dtp3,2020,si,94,,
+MWI,Malawi,dtp3,2021,si,93,,
+NER,Niger,dtp1,2019,si,92,82898,8
+NER,Niger,dtp1,2020,si,93,74893,7
+NER,Niger,dtp1,2021,si,94,66241,6
+NER,Niger,dtp3,2019,si,81,,
+NER,Niger,dtp3,2020,si,81,,
+NER,Niger,dtp3,2021,si,82,,
+NGA,Nigeria,dtp1,2019,si,68,2324614,32
+NGA,Nigeria,dtp1,2020,si,70,2212051,30
+NGA,Nigeria,dtp1,2021,si,70,2247212,30
+NGA,Nigeria,dtp3,2019,si,56,,
+NGA,Nigeria,dtp3,2020,si,56,,
+NGA,Nigeria,dtp3,2021,si,56,,
+NIC,Nicaragua,dtp1,2019,si,99,1404,1
+NIC,Nicaragua,dtp1,2020,si,94,8379,6
+NIC,Nicaragua,dtp1,2021,si,88,16677,12
+NIC,Nicaragua,dtp3,2019,si,98,,
+NIC,Nicaragua,dtp3,2020,si,92,,
+NIC,Nicaragua,dtp3,2021,si,87,,
+NPL,Nepal,dtp1,2019,si,96,23573,4
+NPL,Nepal,dtp1,2020,si,89,64884,11
+NPL,Nepal,dtp1,2021,si,92,47790,8
+NPL,Nepal,dtp3,2019,si,93,,
+NPL,Nepal,dtp3,2020,si,84,,
+NPL,Nepal,dtp3,2021,si,91,,
+PAK,Pakistan,dtp1,2019,si,90,605066,10
+PAK,Pakistan,dtp1,2020,si,83,1034885,17
+PAK,Pakistan,dtp1,2021,si,90,610564,10
+PAK,Pakistan,dtp3,2019,si,84,,
+PAK,Pakistan,dtp3,2020,si,77,,
+PAK,Pakistan,dtp3,2021,si,83,,
+PNG,Papua New Guinea,dtp1,2019,si,44,136450,56
+PNG,Papua New Guinea,dtp1,2020,si,48,127802,52
+PNG,Papua New Guinea,dtp1,2021,si,39,150267,61
+PNG,Papua New Guinea,dtp3,2019,si,35,,
+PNG,Papua New Guinea,dtp3,2020,si,39,,
+PNG,Papua New Guinea,dtp3,2021,si,31,,
+PRK,Democratic People's Republic of Korea,dtp1,2019,si,98,6863,2
+PRK,Democratic People's Republic of Korea,dtp1,2020,si,98,6817,2
+PRK,Democratic People's Republic of Korea,dtp1,2021,si,42,197227,58
+PRK,Democratic People's Republic of Korea,dtp3,2019,si,97,,
+PRK,Democratic People's Republic of Korea,dtp3,2020,si,97,,
+PRK,Democratic People's Republic of Korea,dtp3,2021,si,41,,
+RWA,Rwanda,dtp1,2019,si,99,3846,1
+RWA,Rwanda,dtp1,2020,si,91,34926,9
+RWA,Rwanda,dtp1,2021,si,90,39345,10
+RWA,Rwanda,dtp3,2019,si,98,,
+RWA,Rwanda,dtp3,2020,si,91,,
+RWA,Rwanda,dtp3,2021,si,88,,
+SDN,Sudan,dtp1,2019,si,97,43633,3
+SDN,Sudan,dtp1,2020,si,96,58801,4
+SDN,Sudan,dtp1,2021,si,94,89039,6
+SDN,Sudan,dtp3,2019,si,93,,
+SDN,Sudan,dtp3,2020,si,90,,
+SDN,Sudan,dtp3,2021,si,84,,
+SEN,Senegal,dtp1,2019,si,97,15708,3
+SEN,Senegal,dtp1,2020,si,93,37178,7
+SEN,Senegal,dtp1,2021,si,87,69952,13
+SEN,Senegal,dtp3,2019,si,95,,
+SEN,Senegal,dtp3,2020,si,91,,
+SEN,Senegal,dtp3,2021,si,85,,
+SLB,Solomon Islands,dtp1,2019,si,99,205,1
+SLB,Solomon Islands,dtp1,2020,si,98,412,2
+SLB,Solomon Islands,dtp1,2021,si,95,1040,5
+SLB,Solomon Islands,dtp3,2019,si,94,,
+SLB,Solomon Islands,dtp3,2020,si,94,,
+SLB,Solomon Islands,dtp3,2021,si,87,,
+SLE,Sierra Leone,dtp1,2019,si,95,12388,5
+SLE,Sierra Leone,dtp1,2020,si,93,17416,7
+SLE,Sierra Leone,dtp1,2021,si,94,15020,6
+SLE,Sierra Leone,dtp3,2019,si,95,,
+SLE,Sierra Leone,dtp3,2020,si,91,,
+SLE,Sierra Leone,dtp3,2021,si,92,,
+SOM,Somalia,dtp1,2019,si,52,322417,48
+SOM,Somalia,dtp1,2020,si,52,330446,48
+SOM,Somalia,dtp1,2021,si,52,337948,48
+SOM,Somalia,dtp3,2019,si,42,,
+SOM,Somalia,dtp3,2020,si,42,,
+SOM,Somalia,dtp3,2021,si,42,,
+SSD,South Sudan,dtp1,2019,si,51,141371,49
+SSD,South Sudan,dtp1,2020,si,51,144622,49
+SSD,South Sudan,dtp1,2021,si,51,145940,49
+SSD,South Sudan,dtp3,2019,si,49,,
+SSD,South Sudan,dtp3,2020,si,49,,
+SSD,South Sudan,dtp3,2021,si,49,,
+STP,Sao Tome and Principe,dtp1,2019,si,97,185,3
+STP,Sao Tome and Principe,dtp1,2020,si,97,184,3
+STP,Sao Tome and Principe,dtp1,2021,si,97,188,3
+STP,Sao Tome and Principe,dtp3,2019,si,95,,
+STP,Sao Tome and Principe,dtp3,2020,si,96,,
+STP,Sao Tome and Principe,dtp3,2021,si,97,,
+SYR,Syrian Arab Republic,dtp1,2019,si,72,103261,28
+SYR,Syrian Arab Republic,dtp1,2020,si,65,139809,35
+SYR,Syrian Arab Republic,dtp1,2021,si,65,146984,35
+SYR,Syrian Arab Republic,dtp3,2019,si,54,,
+SYR,Syrian Arab Republic,dtp3,2020,si,49,,
+SYR,Syrian Arab Republic,dtp3,2021,si,48,,
+TCD,Chad,dtp1,2019,si,65,236272,35
+TCD,Chad,dtp1,2020,si,69,214252,31
+TCD,Chad,dtp1,2021,si,73,190658,27
+TCD,Chad,dtp3,2019,si,50,,
+TCD,Chad,dtp3,2020,si,52,,
+TCD,Chad,dtp3,2021,si,58,,
+TGO,Togo,dtp1,2019,si,90,25967,10
+TGO,Togo,dtp1,2020,si,87,34125,13
+TGO,Togo,dtp1,2021,si,88,31838,12
+TGO,Togo,dtp3,2019,si,84,,
+TGO,Togo,dtp3,2020,si,82,,
+TGO,Togo,dtp3,2021,si,83,,
+TJK,Tajikistan,dtp1,2019,si,98,5148,2
+TJK,Tajikistan,dtp1,2020,si,98,5126,2
+TJK,Tajikistan,dtp1,2021,si,97,7638,3
+TJK,Tajikistan,dtp3,2019,si,97,,
+TJK,Tajikistan,dtp3,2020,si,97,,
+TJK,Tajikistan,dtp3,2021,si,97,,
+TZA,United Republic of Tanzania,dtp1,2019,si,91,193969,9
+TZA,United Republic of Tanzania,dtp1,2020,si,88,263300,12
+TZA,United Republic of Tanzania,dtp1,2021,si,82,402373,18
+TZA,United Republic of Tanzania,dtp3,2019,si,89,,
+TZA,United Republic of Tanzania,dtp3,2020,si,86,,
+TZA,United Republic of Tanzania,dtp3,2021,si,81,,
+UGA,Uganda,dtp1,2019,si,96,62816,4
+UGA,Uganda,dtp1,2020,si,94,96513,6
+UGA,Uganda,dtp1,2021,si,97,49266,3
+UGA,Uganda,dtp3,2019,si,93,,
+UGA,Uganda,dtp3,2020,si,89,,
+UGA,Uganda,dtp3,2021,si,91,,
+UZB,Uzbekistan,dtp1,2019,si,96,31741,4
+UZB,Uzbekistan,dtp1,2020,si,96,32919,4
+UZB,Uzbekistan,dtp1,2021,si,99,7946,1
+UZB,Uzbekistan,dtp3,2019,si,96,,
+UZB,Uzbekistan,dtp3,2020,si,95,,
+UZB,Uzbekistan,dtp3,2021,si,98,,
+YEM,Yemen,dtp1,2019,si,81,183302,19
+YEM,Yemen,dtp1,2020,si,83,165254,17
+YEM,Yemen,dtp1,2021,si,82,174613,18
+YEM,Yemen,dtp3,2019,si,73,,
+YEM,Yemen,dtp3,2020,si,72,,
+YEM,Yemen,dtp3,2021,si,72,,
+ZMB,Zambia,dtp1,2019,si,94,37675,6
+ZMB,Zambia,dtp1,2020,si,88,76584,12
+ZMB,Zambia,dtp1,2021,si,94,38957,6
+ZMB,Zambia,dtp3,2019,si,88,,
+ZMB,Zambia,dtp3,2020,si,84,,
+ZMB,Zambia,dtp3,2021,si,91,,
+ZWE,Zimbabwe,dtp1,2019,si,94,28178,6
+ZWE,Zimbabwe,dtp1,2020,si,93,32985,7
+ZWE,Zimbabwe,dtp1,2021,si,93,33150,7
+ZWE,Zimbabwe,dtp3,2019,si,90,,
+ZWE,Zimbabwe,dtp3,2020,si,86,,
+ZWE,Zimbabwe,dtp3,2021,si,86,,
