@@ -33,7 +33,10 @@ class VisMapLegend {
             const [min, max] = this.color.invertExtent(d);
             if (min === undefined) return `<${Math.floor(max)}`;
             if (max === undefined) return `>${Math.ceil(min)}`;
-            if (min * max > 0) return `${Math.ceil(min)} to ${Math.floor(max)}`;
+            if (min > 0 && max > 0)
+              return `${Math.ceil(min)} to ${Math.floor(max)}`;
+            if (min < 0 && max < 0)
+              return `${Math.floor(max)} to ${Math.ceil(min)}`;
             return "No Change";
           })
       );

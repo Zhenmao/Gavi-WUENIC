@@ -159,11 +159,11 @@ class VisMap {
           <dd>${d.country}</dd>
         </div>
         <div>
-          <dt>DTP Coverage ${this.selectedYear - 1}</dt>
+          <dt>DTP3 Coverage ${this.selectedYear - 1}</dt>
           <dd>${formattedPercentagePrevious}</dd>
         </div>
         <div>
-          <dt>DTP Coverage ${this.selectedYear}</dt>
+          <dt>DTP3 Coverage ${this.selectedYear}</dt>
           <dd>${formattedPercentageCurrent}</dd>
         </div>
         <div>

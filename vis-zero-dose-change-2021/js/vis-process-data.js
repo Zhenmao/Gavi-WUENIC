@@ -41,24 +41,25 @@ function visProcessData(csv, codes) {
                 accessor.vaccine(d) === "dtp1" && accessor.year(d) === year - 1
             )
           );
-        const dtp1ValueChange =
-          accessor.zeroDose(
-            v.find(
-              (d) => accessor.vaccine(d) === "dtp1" && accessor.year(d) === year
-            )
-          ) -
-          accessor.zeroDose(
-            v.find(
-              (d) =>
-                accessor.vaccine(d) === "dtp1" && accessor.year(d) === year - 1
-            )
-          );
+        const dtp1ValueCurrent = accessor.zeroDose(
+          v.find(
+            (d) => accessor.vaccine(d) === "dtp1" && accessor.year(d) === year
+          )
+        );
+        const dtp1ValuePrevious = accessor.zeroDose(
+          v.find(
+            (d) =>
+              accessor.vaccine(d) === "dtp1" && accessor.year(d) === year - 1
+          )
+        );
+        const dtp1ValueChange = dtp1ValueCurrent - dtp1ValuePrevious;
         values.set(year, {
           dtp3PercentagePrevious,
           dtp3PercentageCurrent,
           dtp3PercentageChange,
           dtp1PercentageChange,
           dtp1ValueChange,
+          dtp1ValueCurrent,
         });
       });
       return {

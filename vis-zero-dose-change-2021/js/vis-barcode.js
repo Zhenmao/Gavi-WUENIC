@@ -11,7 +11,7 @@ class VisBarcode {
       top: 40,
       bottom: 40,
     };
-    this.height = 680;
+    this.height = 600;
     this.trackWidth = 20;
     this.barcodeWidth = 32;
 
@@ -113,7 +113,7 @@ class VisBarcode {
       .attr("fill", this.color(min))
       .attr("y", this.margin.top - 8)
       .selectAll("tspan")
-      .data(["ZD children", this.formatValue(this.y.domain()[0])])
+      .data(["ZDCs", this.formatValue(this.y.domain()[0])])
       .join("tspan")
       .attr("x", -this.trackWidth / 2)
       .attr("dy", (d, i) => `${-i * 1.2}em`)
@@ -124,7 +124,7 @@ class VisBarcode {
       .attr("fill", this.color(max))
       .attr("y", this.height - this.margin.bottom + 8)
       .selectAll("tspan")
-      .data([this.formatValue(this.y.domain()[1]), "ZD children"])
+      .data([this.formatValue(this.y.domain()[1]), "ZDCs"])
       .join("tspan")
       .attr("x", -this.trackWidth / 2)
       .attr("dy", (d, i) => (i === 0 ? "0.71em" : `${i * 1.2}em`))
@@ -268,6 +268,7 @@ class VisBarcode {
 
   tooltipContent(d) {
     const v = d.values.get(this.selectedYear);
+    const formattedValue = d3.format(",")(v.dtp1ValueCurrent);
     const formattedValueChange =
       v.dtp1ValueChange === 0
         ? "No Change"
@@ -284,11 +285,15 @@ class VisBarcode {
           <dd>${d.country}</dd>
         </div>
         <div>
-          <dt>ZD Children Change</dt>
+          <dt>ZDCs in ${this.selectedYear}</dt>
+          <dd>${formattedValue}</dd>
+        </div>
+        <div>
+          <dt>ZDCs Change</dt>
           <dd>${formattedValueChange}</dd>
         </div>
         <div>
-          <dt>ZD % change</dt>
+          <dt>ZDCs % change</dt>
           <dd>${formattedPercentageChange}</dd>
         </div>
       </dl>
