@@ -12,13 +12,27 @@ class VisMapLegend {
 
     this.title = this.container.append("div");
 
-    this.container
+    this.swatch = this.container
       .append("div")
       .attr("class", "swatches")
       .selectAll(".swatch")
       .data(this.color.range().reverse())
       .join("div")
       .attr("class", "swatch")
+      .on("pointerenter", (event, d) => {
+        this.container.dispatch("activelegenditemchange", {
+          detail: d.toLowerCase(),
+          bubbles: true,
+        });
+        this.swatch.classed("is-highlighted", (e) => e === d);
+      })
+      .on("pointerleave", () => {
+        this.container.dispatch("activelegenditemchange", {
+          detail: null,
+          bubbles: true,
+        });
+        this.swatch.classed("is-highlighted", false);
+      })
       .call((div) =>
         div
           .append("div")

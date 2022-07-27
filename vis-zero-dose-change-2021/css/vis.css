@@ -128,6 +128,10 @@
   stroke-width: 1.5px;
 }
 
+.vis .vis-map .country.is-muted {
+  opacity: 0.2;
+}
+
 .vis .vis-barcode .barcode {
   stroke: #b7b7b7;
   stroke-width: 1.5px;
@@ -165,6 +169,11 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  border: 1.5px solid transparent;
+}
+
+.vis .swatch.is-highlighted .swatch__swatch {
+  border-color: #000;
 }
 
 .vis .swatch__label {

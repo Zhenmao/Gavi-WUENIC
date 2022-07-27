@@ -29,9 +29,14 @@ Promise.all([
     barcode.updateSelectedYear(selectedYear);
   });
 
-  d3.select("#vis").on("highlight", (event) => {
-    const id = event.detail;
-    map.highlight(id);
-    barcode.highlight(id);
-  });
+  d3.select("#vis")
+    .on("highlight", (event) => {
+      const id = event.detail;
+      map.highlight(id);
+      barcode.highlight(id);
+    })
+    .on("activelegenditemchange", (event) => {
+      const activeLegendItemColor = event.detail;
+      map.filter(activeLegendItemColor);
+    });
 });

@@ -143,6 +143,22 @@ class VisMap {
     }
   }
 
+  filter(activeColor) {
+    if (!activeColor) {
+      this.country.classed("is-highlighted", false).classed("is-muted", false);
+    } else {
+      this.country.each(function () {
+        const isActive =
+          d3.color(d3.select(this).attr("fill")).formatHex().toLowerCase() ===
+          activeColor;
+        d3.select(this)
+          .classed("is-highlighted", isActive)
+          .classed("is-muted", !isActive);
+        if (isActive) d3.select(this).raise();
+      });
+    }
+  }
+
   tooltipContent(d) {
     const v = d.values.get(this.selectedYear);
     const formattedPercentagePrevious = v.dtp3PercentagePrevious + "%";
