@@ -5,3 +5,5 @@
 - [DTP3 vaccination: comparison by region of monthly administrative data](https://zhenmao.github.io/Gavi-WUENIC/vis-dtp3-vaccinated-region-line/)
 
 - [Change in Zero Dose Children 2019 to 2020](https://zhenmao.github.io/Gavi-WUENIC/vis-zero-dose-change/)
+
+- [Change in Zero Dose Children 2019 to 2021](https://zhenmao.github.io/Gavi-WUENIC/vis-zero-dose-change-2021/)
