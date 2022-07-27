@@ -11,7 +11,7 @@ class VisBarcode {
       top: 40,
       bottom: 40,
     };
-    this.height = 600;
+    this.height = 660;
     this.trackWidth = 20;
     this.barcodeWidth = 32;
 
@@ -113,7 +113,7 @@ class VisBarcode {
       .attr("fill", this.color(min))
       .attr("y", this.margin.top - 8)
       .selectAll("tspan")
-      .data(["ZDCs", this.formatValue(this.y.domain()[0])])
+      .data(["ZDC", this.formatValue(this.y.domain()[0])])
       .join("tspan")
       .attr("x", -this.trackWidth / 2)
       .attr("dy", (d, i) => `${-i * 1.2}em`)
@@ -124,7 +124,7 @@ class VisBarcode {
       .attr("fill", this.color(max))
       .attr("y", this.height - this.margin.bottom + 8)
       .selectAll("tspan")
-      .data([this.formatValue(this.y.domain()[1]), "ZDCs"])
+      .data([this.formatValue(this.y.domain()[1]), "ZDC"])
       .join("tspan")
       .attr("x", -this.trackWidth / 2)
       .attr("dy", (d, i) => (i === 0 ? "0.71em" : `${i * 1.2}em`))
@@ -148,11 +148,6 @@ class VisBarcode {
       .append("g")
       .attr("class", "barcode-labels")
       .selectAll(".barcode-label");
-
-    this.container
-      .append("div")
-      .attr("class", "text-center")
-      .html("Change in # of <br/> ZD children");
 
     this.resize();
     window.addEventListener("resize", this.resize);
@@ -285,15 +280,15 @@ class VisBarcode {
           <dd>${d.country}</dd>
         </div>
         <div>
-          <dt>ZDCs in ${this.selectedYear}</dt>
+          <dt>ZDC in ${this.selectedYear}</dt>
           <dd>${formattedValue}</dd>
         </div>
         <div>
-          <dt>ZDCs Change</dt>
+          <dt>ZDC Change</dt>
           <dd>${formattedValueChange}</dd>
         </div>
         <div>
-          <dt>ZDCs % change</dt>
+          <dt>ZDC % change</dt>
           <dd>${formattedPercentageChange}</dd>
         </div>
       </dl>
