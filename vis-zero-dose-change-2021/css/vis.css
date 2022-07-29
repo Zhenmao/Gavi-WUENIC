@@ -118,9 +118,43 @@
   width: 100%;
 }
 
+.vis .vis-map .zoom-control {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.vis .vis-map .zoom-control__in,
+.vis .vis-map .zoom-control__out {
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 0;
+  background-color: #fff;
+  border: 0;
+  font: inherit;
+  display: block;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vis .vis-map .zoom-control__in {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 00.25rem;
+}
+
+.vis .vis-map .zoom-control__out {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
 .vis .vis-map .country {
   stroke: #b7b7b7;
   stroke-width: 0.5px;
+  vector-effect: non-scaling-stroke;
 }
 
 .vis .vis-map .country.is-highlighted {

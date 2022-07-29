@@ -4,6 +4,7 @@ class VisMap {
     this.world = world;
     this.selectedYear = selectedYear;
     this.resize = this.resize.bind(this);
+    this.zoomed = this.zoomed.bind(this);
     this.init();
   }
 
@@ -23,6 +24,8 @@ class VisMap {
 
     this.projection = d3.geoNaturalEarth1().rotate([-8, 0]);
     this.geoPath = d3.geoPath(this.projection);
+
+    this.zoom = d3.zoom().on("zoom", this.zoomed);
 
     this.color = d3
       .scaleThreshold()
@@ -55,6 +58,24 @@ class VisMap {
       .attr("class", "countries")
       .selectAll(".country");
 
+    this.zoomControl = this.container
+      .append("div")
+      .attr("class", "zoom-control");
+    this.zoomIn = this.zoomControl
+      .append("button")
+      .attr("class", "zoom-control__in")
+      .text("+")
+      .on("click", () => {
+        this.svg.transition().call(this.zoom.scaleBy, 2);
+      });
+    this.zoomOut = this.zoomControl
+      .append("button")
+      .attr("class", "zoom-control__out")
+      .text("−")
+      .on("click", () => {
+        this.svg.transition().call(this.zoom.scaleBy, 0.5);
+      });
+
     window.addEventListener("resize", this.resize);
     this.resize();
   }
@@ -82,6 +103,8 @@ class VisMap {
 
     this.svg.attr("viewBox", [0, 0, this.width, this.height]);
 
+    this.svg.call(this.zoom).call(this.zoom.transform, d3.zoomIdentity);
+
     this.render();
   }
 
@@ -99,13 +122,13 @@ class VisMap {
               .each((d) => {
                 this.data.get(d.id).feature = d;
               })
-              .on("pointerenter", (event, d) => {
+              .on("mouseenter", (event, d) => {
                 this.container.dispatch("highlight", {
                   detail: d.id,
                   bubbles: true,
                 });
               })
-              .on("pointerleave", () => {
+              .on("mouseleave", () => {
                 this.container.dispatch("highlight", {
                   detail: null,
                   bubbles: true,
@@ -125,11 +148,20 @@ class VisMap {
     });
   }
 
+  zoomed({ transform }) {
+    this.transform = transform;
+    this.g.attr("transform", this.transform);
+    if (this.highlighted) this.highlight(this.highlighted);
+  }
+
   highlight(id) {
+    this.highlighted = id;
     if (id) {
       const d = this.data.get(id);
       this.tooltip.show(this.tooltipContent(d));
-      this.tooltip.move(...this.geoPath.centroid(d.feature));
+      this.tooltip.move(
+        ...this.transform.apply(this.geoPath.centroid(d.feature))
+      );
       this.country.classed("is-highlighted", function (f) {
         if (f.id === id) {
           d3.select(this).raise();
