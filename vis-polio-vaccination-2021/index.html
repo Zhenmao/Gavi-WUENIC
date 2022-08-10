@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAVI</title>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/vis.css" />
+  </head>
+  <body>
+    <div id="vis" class="vis" onclick>
+      <div class="vis-stack">
+        <div class="vis-row">
+          <div class="vis-col vis-main vis-stack">
+            <h1 class="vis-title">
+              Change in polio vaccination coverage and cases, 2019-2021
+            </h1>
+            <div
+              >Percentage point (pp) difference in polio vaccination
+              globally</div
+            >
+            <div id="vis-map" class="chart-container vis-map"></div>
+            <div id="vis-map-legend" class="vis-map-legend"></div>
+          </div>
+          <div class="vis-col vis-side">
+            <div>Change in number of polio cases</div>
+            <div id="vis-barcode" class="chart-container vis-barcode"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="js/vis-process-data.js"></script>
+    <script src="js/vis-tooltip.js"></script>
+    <script src="js/vis-map-legend.js"></script>
+    <script src="js/vis-map.js"></script>
+    <script src="js/vis-barcode.js"></script>
+    <script src="js/vis.js"></script>
+  </body>
+</html>
